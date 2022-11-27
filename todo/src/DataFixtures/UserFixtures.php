@@ -9,7 +9,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserFixtures extends Fixture
 {
-    public const USER_REF = 'user-toto';
+    public const USER_REF = 'user_';
 
     private $passwordHasher;
 
@@ -23,24 +23,36 @@ class UserFixtures extends Fixture
     return [
         [
             "id" => 1,
-            "name" => "totoo",
-            "email" => "totoo@email.fr",
+            "name" => "thomas",
+            "email" => "thomas@email.fr",
             "password" => "dev",
-            "roles" => "ROLE_ADMIN"
+            "roles" => ["ROLE_ADMIN"]
         ],
         [
-            "id" => 1,
-            "name" => "totoo",
-            "email" => "totoo@email.fr",
+            "id" => 2,
+            "name" => "jerome",
+            "email" => "jerome@email.fr",
             "password" => "dev",
-            "roles" => "ROLE_ADMIN"
+            "roles" => ["ROLE_ADMIN"]
         ],
         [
-            "id" => 1,
-            "name" => "totoo",
-            "email" => "totoo@email.fr",
+            "id" => 3,
+            "name" => "ayoub",
+            "email" => "ayoub@email.fr",
             "password" => "dev",
-            "roles" => "ROLE_ADMIN"
+        ],
+        [
+            "id" => 4,
+            "name" => "mathilde",
+            "email" => "mathilde@email.fr",
+            "password" => "dev",
+        ],
+        [
+            "id" => 5,
+            "name" => "david",
+            "email" => "david@email.fr",
+            "password" => "dev",
+            "roles" => ["ROLE_ADMIN"]
         ]
     ];
     }
@@ -49,17 +61,18 @@ class UserFixtures extends Fixture
     {
         $users = $this->getUsers();
         foreach ($users as $user){
-            $user = new User();
-            $user->setEmail("toto@toto.fr");
-            $user->setUsername("toto");
+            $newUser = new User();
+            $newUser->setEmail($user['email']);
+            $newUser->setUsername($user['name']);
 
-            $hashedPassword = $this->passwordHasher->hashPassword($user, 'toto');
+            $hashedPassword = $this->passwordHasher->hashPassword($newUser, $user['password']);
 
-            $user->setPassword($hashedPassword);
+            $newUser->setPassword($hashedPassword);
+            if(isset($user['roles'])) $newUser->setRoles($user['roles']);
 
-            $this->addReference(self::USER_REF, $user);
+            $this->addReference(self::USER_REF. $newUser->getUsername(), $newUser);
 
-            $manager->persist($user);
+            $manager->persist($newUser);
         }
         $manager->flush();
     }
