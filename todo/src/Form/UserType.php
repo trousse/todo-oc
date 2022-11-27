@@ -30,9 +30,7 @@ class UserType extends AbstractType
                         'user' => 'ROLE_USER'],
                     'expanded' => true,
                     'multiple' => true,
-                ]
-            )
-            ->add('email', EmailType::class, ['label' => 'Adresse email'])
-        ;
+                ])
+            ->add('email', EmailType::class, ['label' => 'Adresse email']);
     }
 }
