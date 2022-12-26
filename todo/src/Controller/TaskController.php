@@ -69,10 +69,10 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/toggle", name="task_toggle")
      */
-    public function toggleTaskAction(Task $task)
+    public function toggleTaskAction(Task $task, TaskRepository $taskRepository)
     {
         $task->toggle(!$task->isDone());
-        $this->getDoctrine()->getManager()->flush();
+        $taskRepository->add($task);
 
         $this->addFlash('success', sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle()));
 
@@ -81,13 +81,14 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
+     *  @IsGranted("ROLE_USER")
      */
     public function deleteTaskAction(Task $task,TaskRepository $taskRepository)
     {
         if($task->getUser() === $this->getUser()){
             $taskRepository->remove($task);
             $this->addFlash('success', 'La tâche a bien été supprimée.');
-        }else{
+        } else{
             $this->addFlash('danger', 'Acces denied');
         }
 
