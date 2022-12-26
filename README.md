@@ -32,3 +32,21 @@ Amélioration et documentation d'un projet existant ToDo & Co.
 il est necessaire d'ajouter la ligne suivante et d'intaler xdebug
             zend_extension="xdebug.so"
 ```
+
+## Norme a recepter 
+
+le projet contient plusieur exigence 
+
+1. le code doit respecter les normes définie sur codacy et tous commit doit avoir la note minimal B
+    https://app.codacy.com/gh/trousse/todo-oc/dashboard
+```
+
+2. toute nouvelle fonctionalité dois validé les tests existant et doit implémenter un test fonctionel 
+les test ce situe dans le dossier test, il est necessaire de crée une nouvelle fonction de test pour toute nouvelle fonctionalité 
+la fonction doit commencé par test et doit etre ecrite dans le bon controler 
+une fois le test ecrit il est necessaire de lancer la commande en mode coverage
+
+   XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html public/test-coverage
+```
+
+
