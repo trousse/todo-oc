@@ -33,9 +33,9 @@ il est necessaire d'ajouter la ligne suivante et d'intaler xdebug
             zend_extension="xdebug.so"
 ```
 
-## Norme a recepter 
+## Normes à réspecter 
 
-le projet contient plusieur exigence 
+le projet contient plusieurs exigences
 
 1. le code doit respecter les normes définie sur codacy et tous commit doit avoir la note minimal B
     https://app.codacy.com/gh/trousse/todo-oc/dashboard
