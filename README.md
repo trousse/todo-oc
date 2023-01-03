@@ -24,6 +24,7 @@ Amélioration et documentation d'un projet existant ToDo & Co.
 6. (Optionnel) Installez les fixtures pour avoir une démo de données fictives en développement :
 ```
     php bin/console doctrine:fixtures:load
+    
 7. launch Test coverage 
 
     XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html public/test-coverage
