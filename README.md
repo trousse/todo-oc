@@ -1,5 +1,7 @@
 # P8-ToDoAndCo
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/002860e63cb648a1a5f65964f9ff67c2)](https://app.codacy.com/gh/trousse/todo-oc?utm_source=github.com&utm_medium=referral&utm_content=trousse/todo-oc&utm_campaign=Badge_Grade_Settings)
+
 Amélioration et documentation d'un projet existant ToDo & Co.
 
 ## Installation
