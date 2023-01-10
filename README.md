@@ -11,7 +11,7 @@ Amélioration et documentation d'un projet existant ToDo & Co.
 
 3. Téléchargez et installez les dépendances du projet avec [Composer](https://getcomposer.org/download/) :
 ```
-    composer install
+    composer install --dev
 ```
 4. Créez la base de données si elle n'existe pas déjà, taper la commande ci-dessous en vous plaçant dans le répertoire du projet :
 ```
