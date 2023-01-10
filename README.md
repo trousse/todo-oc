@@ -1,11 +1,12 @@
 # P8-ToDoAndCo
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/837e4ada761c4f4292bc9b360e88aba6)](https://www.codacy.com/gh/trousse/todo-oc/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=trousse/todo-oc&amp;utm_campaign=Badge_Grade)
 
 Amélioration et documentation d'un projet existant ToDo & Co.
 
 ## Installation
 1. Clonez ou téléchargez le repository GitHub dans le dossier voulu :
 ```
-    git clone https://github.com/sorha/P8-ToDoAndCo.git
+    git clone https://github.com/trousse/todo-oc.git
 ```
 2. Configurez vos variables d'environnement tel que la connexion à la base de données dans le fichier `.env.local` qui devra être crée à la racine du projet en réalisant une copie du fichier `.env` ainsi que la connexion à la base de données de test dans le fichier `env.test`.
 
