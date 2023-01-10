@@ -40,12 +40,14 @@ class UserFixtures extends Fixture
             "name" => "ayoub",
             "email" => "ayoub@email.fr",
             "password" => "dev",
+            "roles" => ["ROLE_USER"]
         ],
         [
             "id" => 4,
             "name" => "mathilde",
             "email" => "mathilde@email.fr",
             "password" => "dev",
+            "roles" => ["ROLE_USER"]
         ],
         [
             "id" => 5,
