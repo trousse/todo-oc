@@ -14,19 +14,28 @@ Amélioration et documentation d'un projet existant ToDo & Co.
 ```
     composer install --dev
 ```
-4. Créez la base de données si elle n'existe pas déjà, taper la commande ci-dessous en vous plaçant dans le répertoire du projet :
+
+4. configurer votre fichier env.local en ajoutant la configuration de la base de donné
+```
+    ###> doctrine/doctrine-bundle ###
+    DATABASE_URL="mysql://root:root@127.0.0.1:8889/todo"
+    ###< doctrine/doctrine-bundle ###
+```
+
+5. Créez la base de données si elle n'existe pas déjà, taper la commande ci-dessous en vous plaçant dans le répertoire du projet :
 ```
     php bin/console doctrine:database:create
 ```
-5. Créez les différentes tables de la base de données en appliquant les migrations :
+
+6. Créez les différentes tables de la base de données en appliquant les migrations :
 ```
     php bin/console doctrine:migrations:migrate
 ```
-6. (Optionnel) Installez les fixtures pour avoir une démo de données fictives en développement :
+7. (Optionnel) Installez les fixtures pour avoir une démo de données fictives en développement :
 ```
     php bin/console doctrine:fixtures:load
     
-7. launch Test coverage 
+8. launch Test coverage 
 
     XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html public/test-coverage
 ```
